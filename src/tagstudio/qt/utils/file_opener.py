@@ -47,7 +47,7 @@ def open_file(path: str | Path, file_manager: bool = False, windows_start_comman
                 # path has spaces, even while surrounded in double quotes.
                 silent_popen(
                     command_name + command_arg,
-                    shell=True,
+                    shell=False,
                     close_fds=True,
                     creationflags=subprocess.CREATE_NEW_PROCESS_GROUP
                     | subprocess.CREATE_BREAKAWAY_FROM_JOB,
@@ -59,7 +59,7 @@ def open_file(path: str | Path, file_manager: bool = False, windows_start_comman
                     command_args = ["", normpath]
                     subprocess.Popen(
                         [command_name] + command_args,
-                        shell=True,
+                        shell=False,
                         close_fds=True,
                         creationflags=subprocess.CREATE_NEW_PROCESS_GROUP
                         | subprocess.CREATE_BREAKAWAY_FROM_JOB,
@@ -68,7 +68,7 @@ def open_file(path: str | Path, file_manager: bool = False, windows_start_comman
                     command = f'"{normpath}"'
                     silent_popen(
                         command,
-                        shell=True,
+                        shell=False,
                         close_fds=True,
                         creationflags=subprocess.CREATE_NEW_PROCESS_GROUP
                         | subprocess.CREATE_BREAKAWAY_FROM_JOB,

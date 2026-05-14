@@ -104,7 +104,7 @@ class RefreshTracker:
                 ),
                 cwd=library_dir,
                 capture_output=True,
-                shell=True,
+                shell=False,
                 encoding="UTF-8",
             )
             compiled_ignore_path.unlink()
